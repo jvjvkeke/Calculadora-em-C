@@ -3,50 +3,65 @@
 #include <stdbool.h>
 
 int main() {
-    system("cls"); 
     
-    float n1,n2;
+    float n1, n2;
     char operador;
     bool ligado = true;
     int opcao;
 
     while (ligado)
     {
-        printf("DIGITE UM NUMERO\n");
-        scanf("%f",&n1);
+        system("cls");
 
-        printf("DIGITE OUTRO NUMERO\n");
-        scanf("%f",&n2);
+        printf("===== CALCULADORA =====\n");
 
-        printf("DIGITE UM OPERADOR : (+) (-) (/) (*) \n");
-        scanf(" %c",&operador);
+        printf("DIGITE UM NUMERO: ");
+        scanf("%f", &n1);
+
+        printf("DIGITE OUTRO NUMERO: ");
+        scanf("%f", &n2);
+
+        printf("DIGITE UM OPERADOR (+ - * /): ");
+        scanf(" %c", &operador);
+
+        printf("\nRESULTADO:\n");
 
         switch (operador)
         {
         case '+':
-            printf("SOMA DOS NÚMEROS É : %.2f\n",n1+n2);
+            printf("SOMA = %.2f\n", n1 + n2);
             break;
+
         case '-':
-            printf("SUBTRACAO DOS NUMEROS É %.2f\n",n1-n2);
+            printf("SUBTRACAO = %.2f\n", n1 - n2);
             break;
-        case '/':
-            printf("DIVISAO DOS NUMEROS É %.2f\n",n1/n2);
-            break;
+
         case '*':
-            printf("MULTIPLICACAO DOS NUMEROS É: %.2f\n",n1*n2);
+            printf("MULTIPLICACAO = %.2f\n", n1 * n2);
             break;
+
+        case '/':
+            if (n2 == 0)
+            {
+                printf("ERRO: NAO EXISTE DIVISAO POR ZERO\n");
+            }
+            else
+            {
+                printf("DIVISAO = %.2f\n", n1 / n2);
+            }
+            break;
+
         default:
-            printf("INSIRA UM VALOR VALIDO\n");
+            printf("OPERADOR INVALIDO\n");
         }
 
         printf("\nDeseja continuar? (1 = sim / 0 = nao): ");
         scanf("%d", &opcao);
 
-        if(opcao == 0){
+        if (opcao == 0)
+        {
             ligado = false;
         }
-
-        system("cls"); // limpa a tela a cada loop
     }
 
     return 0;

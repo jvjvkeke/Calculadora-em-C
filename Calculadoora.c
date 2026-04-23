@@ -18,11 +18,13 @@ int main() {
         printf("DIGITE UM NUMERO: ");
         scanf("%f", &n1);
 
+        printf("DIGITE UM OPERADOR (+ - * /): ");
+        scanf(" %c", &operador);
+
         printf("DIGITE OUTRO NUMERO: ");
         scanf("%f", &n2);
 
-        printf("DIGITE UM OPERADOR (+ - * /): ");
-        scanf(" %c", &operador);
+       
 
         printf("\nRESULTADO:\n");
 

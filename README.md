@@ -4,4 +4,4 @@
 - Validação de operador
 
 ## Tecnologias
-- Linguagem C
+- Linguagem C 
